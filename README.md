@@ -33,7 +33,7 @@ This project is built with modern web technologies to ensure a performant and ci
 To set sail and run this project locally, follow these steps:
 
 ### 1. Prerequisites
-Ensure you have [Node.js](https://nodejs.org/) (>= 22.12.0) and [pnpm](https://pnpm.io/) installed.
+Ensure you have [Node.js](https://nodejs.org/) (**v22.12.0 or higher**) and [pnpm](https://pnpm.io/) installed.
 
 ### 2. Installation
 Clone the repository and install the dependencies:
@@ -46,7 +46,7 @@ Start the local development server:
 ```bash
 pnpm dev
 ```
-The application will be available at `http://localhost:4321`.
+The application will be available at `http://localhost:4321/one-piece-timeline/`.
 
 ### 4. Build
 To create a production-ready bundle:
