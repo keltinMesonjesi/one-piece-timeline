@@ -87,6 +87,8 @@ The output will be in the `dist/` directory.
 
 ## ⚖️ License
 
+This project is licensed under the [MIT License](LICENSE).
+
 This project is a fan-made tribute to the world of *One Piece* by Eiichiro Oda. All rights to the characters, names, and lore belong to Shueisha and Toei Animation.
 
 *"The One Piece... is real!"* 🌊🏙️
