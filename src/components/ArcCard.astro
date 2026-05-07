@@ -1,0 +1,42 @@
+---
+interface Props {
+    arcKey: string;
+    name: string;
+    description: string;
+    imagePath: string;
+    chapters?: string;
+    side?: 'left' | 'right';
+    crewJoins?: { name: string; icon: string }[];
+    quote?: string;
+}
+const { arcKey, name, description, imagePath, chapters, side = 'right', crewJoins = [], quote } = Astro.props;
+---
+<div class={`arc-entry ${side}`} id={`arc-${arcKey}`} data-arc={arcKey}>
+    <div class="timeline-node"></div>
+    <div class="arc-card">
+        <div class="card-shimmer"></div>
+        <div class="card-image">
+            <img src={imagePath} alt={`Illustration for ${name} Arc`} class="arc-img" />
+            {chapters && <span class="chapter-badge">{chapters}</span>}
+        </div>
+        <div class="card-body">
+            <h3 class="arc-name">{name}</h3>
+            <p class="arc-desc">{description}</p>
+            {quote && (
+                <div class="arc-quote">
+                    <p class="quote-text">"{quote}"</p>
+                </div>
+            )}
+            {crewJoins.length > 0 && (
+                <div class="crew-joins">
+                    {crewJoins.map(member => (
+                        <span class="crew-tag" data-name={member.name}>
+                            <span class="icon">{member.icon}</span>
+                            {member.name} joins
+                        </span>
+                    ))}
+                </div>
+            )}
+        </div>
+    </div>
+</div>

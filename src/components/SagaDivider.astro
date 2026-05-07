@@ -1,0 +1,12 @@
+---
+interface Props {
+    saga: string;
+    label: string;
+}
+const { saga, label } = Astro.props;
+---
+<div class={`saga-divider saga-${saga}`}>
+    <div class="line"></div>
+    <span class="saga-label">{label}</span>
+    <div class="line" style="transform: scaleX(-1);"></div>
+</div>

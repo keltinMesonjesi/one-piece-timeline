@@ -1,0 +1,92 @@
+---
+---
+<div class="bounty-tracker" id="bounty-tracker">
+    <div class="bounty-label">CURRENT CREW BOUNTY</div>
+    <div class="bounty-value">
+        <span class="currency">฿</span>
+        <span id="bounty-amount">0</span>
+    </div>
+    <div class="poneglyph-counter" id="pone-counter">
+        <span class="pone-icon">🟥</span>
+        <span id="pone-count">0</span> / 4
+    </div>
+</div>
+
+<style>
+    .bounty-tracker {
+        position: fixed;
+        bottom: 30px;
+        left: 30px;
+        z-index: 100;
+        background: rgba(10, 14, 26, 0.6);
+        backdrop-filter: blur(12px);
+        padding: 0.75rem 1.25rem;
+        border-radius: 12px;
+        border: 1px solid rgba(245, 158, 11, 0.3);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        font-family: 'Space Grotesk', sans-serif;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .bounty-tracker.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .bounty-label {
+        font-size: 0.65rem;
+        color: var(--text-secondary);
+        letter-spacing: 2px;
+        margin-bottom: 2px;
+        font-weight: 700;
+    }
+
+    .bounty-value {
+        font-size: 1.5rem;
+        color: var(--gold-glow);
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        text-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+    }
+
+    .poneglyph-counter {
+        margin-top: 0.5rem;
+        font-size: 0.8rem;
+        color: #ef4444;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        opacity: 0.6;
+        transition: opacity 0.3s;
+    }
+
+    .poneglyph-counter.all-found {
+        opacity: 1;
+        text-shadow: 0 0 10px #ef4444;
+    }
+
+    .pone-icon {
+        font-size: 0.7rem;
+    }
+
+    .currency {
+        font-size: 1.2rem;
+        margin-top: 2px;
+    }
+
+    @media (max-width: 768px) {
+        .bounty-tracker {
+            left: 20px;
+            bottom: 20px;
+            padding: 0.5rem 1rem;
+        }
+        .bounty-value {
+            font-size: 1.2rem;
+        }
+    }
+</style>

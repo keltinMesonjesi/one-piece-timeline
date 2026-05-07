@@ -1,0 +1,347 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SagaDivider from "../components/SagaDivider.astro";
+import ArcCard from "../components/ArcCard.astro";
+import Poneglyph from "../components/Poneglyph.astro";
+import LogEntry from "../components/LogEntry.astro";
+---
+
+<Layout>
+    <div id="drums-overlay" class="drums-resonance"></div>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="hero-skull">
+            <div id="haki-trigger" class="hero-logo-container">
+                <img
+                    src="/assets/strawhat_jollyroger.png"
+                    alt="Straw Hat Jolly Roger"
+                    style="width: 100%; height: 100%; filter: drop-shadow(0 0 30px var(--gold-glow));"
+                />
+                <div class="haki-ripple"></div>
+            </div>
+        </div>
+        <h1>The Straw Hat Journey</h1>
+        <p class="subtitle">
+            From a small village in East Blue to the edges of the Grand Line —
+            the complete voyage of the crew that will make their captain King of
+            the Pirates.
+        </p>
+        <div class="scroll-cue">
+            <span>Set Sail</span>
+            <div class="arrow"></div>
+        </div>
+    </header>
+
+    <!-- Timeline -->
+    <section class="timeline">
+        <div id="timeline-progress-line"></div>
+
+        <!-- ═══ EAST BLUE SAGA ═══ -->
+        <div id="saga-eastblue" class="saga-section" data-saga="eastblue">
+            <SagaDivider saga="eastblue" label="East Blue Saga" />
+
+            <div class="arc-entry right" data-arc="romance-dawn">
+                <ArcCard
+                    arcKey="romance-dawn"
+                    name="Romance Dawn"
+                    description="A boy in a straw hat makes a promise to a red-haired pirate. Years later, Luffy sets sail from Foosha Village with nothing but a barrel and a dream — to find the One Piece and become King of the Pirates."
+                    imagePath="/assets/arcs/romance-dawn.png"
+                    chapters="Ch. 1–7"
+                    side="right"
+                    crewJoins={[{ name: "Luffy", icon: "👒" }]}
+                    quote="I'm going to be the King of the Pirates!"
+                />
+                <LogEntry 
+                    author="Luffy" 
+                    text="The sea is so big! I finally set off. First, I need a crew... maybe ten people?" 
+                    side="left" 
+                />
+            </div>
+
+            <ArcCard
+                arcKey="orange-town"
+                name="Orange Town"
+                description="Luffy crashes into a town terrorized by Buggy the Clown and meets a clever thief named Nami. Amid the burning wreckage, an unlikely alliance is born — and a map to the Grand Line changes hands."
+                imagePath="/assets/arcs/orange-town.png"
+                chapters="Ch. 8–21"
+                side="left"
+                crewJoins={[{ name: "Nami", icon: "🍊" }]}
+                quote="I'm not a pirate. I'm a thief who steals from pirates!"
+            />
+
+            <ArcCard
+                arcKey="baratie"
+                name="Baratie"
+                description="On the floating restaurant Baratie, Luffy finds a chef who fights with his feet and dreams of a legendary ocean. When the dread pirate Don Krieg attacks, Sanji must choose between the old man who saved him and the sea that calls to him."
+                imagePath="/assets/arcs/baratie.png"
+                chapters="Ch. 43–68"
+                side="right"
+                crewJoins={[{ name: "Sanji", icon: "🍳" }]}
+                quote="I will find the All Blue!"
+            />
+
+            <div class="arc-entry left" data-arc="arlong-park">
+                <ArcCard
+                    arcKey="arlong-park"
+                    name="Arlong Park"
+                    description="Behind Nami's smile hides years of suffering under the fishman Arlong. When Luffy sees her tears, he places his hat on her head and walks toward the strongest enemy he's ever faced. 'Of course I will help you' — a moment that defined the crew forever."
+                    imagePath="/assets/arcs/arlong-park.png"
+                    chapters="Ch. 69–95"
+                    side="left"
+                    quote="Luffy... help me."
+                />
+                <LogEntry 
+                    author="Nami" 
+                    text="I finally have real friends. I can actually smile now." 
+                    side="right" 
+                />
+            </div>
+        </div>
+
+        <!-- ═══ ALABASTA SAGA ═══ -->
+        <div id="saga-alabasta" class="saga-section" data-saga="alabasta">
+            <SagaDivider saga="alabasta" label="Alabasta Saga" />
+
+            <ArcCard
+                arcKey="drum-island"
+                name="Drum Island"
+                description="In a frozen kingdom ruled by a tyrant, a tiny reindeer who ate the Human-Human Fruit hides in the snow. Luffy climbs a mountain with bare hands and frozen skin to save Nami — and brings a doctor into the crew who just wants to cure every disease in the world."
+                imagePath="/assets/arcs/drum-island.png"
+                chapters="Ch. 130–154"
+                side="right"
+                crewJoins={[{ name: "Chopper", icon: "🩺" }]}
+                quote="When does a man die? When he is forgotten!"
+            />
+
+            <div class="arc-entry left" data-arc="alabasta">
+                <ArcCard
+                    arcKey="alabasta"
+                    name="Alabasta"
+                    description="A princess begs pirates to save her kingdom from a shadowy warlord who controls the sands. Crocodile's conspiracy unravels in a desperate race across the desert, culminating in a battle that shakes Alabasta to its foundations. Vivi's farewell — arms raised in silent friendship — is etched in every fan's memory."
+                    imagePath="/assets/arcs/alabasta.png"
+                    chapters="Ch. 155–217"
+                    side="left"
+                    quote="Stop the rebellion!"
+                />
+                <LogEntry 
+                    author="Vivi" 
+                    text="Please don't forget me! I'll be waiting for you all to come back." 
+                    side="right" 
+                />
+            </div>
+        </div>
+
+        <!-- ═══ SKYPIEA SAGA ═══ -->
+        <div id="saga-skypiea" class="saga-section" data-saga="skypiea">
+            <SagaDivider saga="skypiea" label="Skypiea Saga" />
+
+            <ArcCard
+                arcKey="skypiea"
+                name="Skypiea"
+                description="The Straw Hats ride the Knock-Up Stream into a sea of clouds, discovering an island in the sky ruled by a self-proclaimed god. Ancient ruins, golden bells, and the dream of a liar who was right all along — the city of gold was always in the sky."
+                imagePath="/assets/arcs/skypiea.png"
+                chapters="Ch. 218–302"
+                side="right"
+                quote="Let them laugh. When you aim high, you'll find there are fights not worth fighting."
+            />
+            <Poneglyph id="skypiea-stone" />
+        </div>
+
+        <!-- ═══ WATER 7 SAGA ═══ -->
+        <div id="saga-water7" class="saga-section" data-saga="water7">
+            <SagaDivider saga="water7" label="Water 7 Saga" />
+
+            <ArcCard
+                arcKey="water-7"
+                name="Water 7"
+                description="The city of water becomes the stage for the crew's greatest crisis. The Going Merry is dying, Usopp fights Luffy in the rain, and Robin vanishes into the shadows of a government conspiracy. The crew is shattered — and the real journey begins."
+                imagePath="/assets/arcs/water7.png"
+                chapters="Ch. 322–374"
+                side="left"
+                crewJoins={[{ name: "Franky", icon: "⭐" }]}
+                quote="I'm sorry... I wanted to carry you everyone just a little farther."
+            />
+
+            <div class="arc-entry right" data-arc="enies-lobby">
+                <ArcCard
+                    arcKey="enies-lobby"
+                    name="Enies Lobby"
+                    description="'I WANT TO LIVE!' — Robin's scream pierces the sky as the Straw Hats declare war on the entire World Government. The crew storms the Judicial Island, each fighting the battle of their lives. The Going Merry sails one last time. The flag of the World Government burns."
+                    imagePath="/assets/arcs/enies-lobby.png"
+                    chapters="Ch. 375–430"
+                    side="right"
+                    quote="I WANT TO LIVE! TAKE ME TO THE SEA WITH YOU!"
+                />
+                <LogEntry 
+                    author="Robin" 
+                    text="I never thought I'd find people who would go to war with the world just for me." 
+                    side="left" 
+                />
+            </div>
+        </div>
+
+        <!-- ═══ THRILLER BARK SAGA ═══ -->
+        <div id="saga-thriller" class="saga-section" data-saga="thriller">
+            <SagaDivider saga="thriller" label="Thriller Bark Saga" />
+
+            <ArcCard
+                arcKey="thriller-bark"
+                name="Thriller Bark"
+                description="A ghost ship the size of an island drifts in the Florian Triangle. Shadows are stolen, zombies walk, and a skeleton with an afro plays a song he's waited fifty years to finish. 'Nothing happened' — Zoro stands alone in Luffy's pain, and Brook finds his crew at last."
+                imagePath="/assets/arcs/thriller-bark.png"
+                chapters="Ch. 442–489"
+                side="left"
+                crewJoins={[{ name: "Brook", icon: "🎻" }]}
+                quote="Nothing... happened."
+            />
+        </div>
+
+        <!-- ═══ SUMMIT WAR SAGA ═══ -->
+        <div id="saga-summit" class="saga-section" data-saga="summit">
+            <SagaDivider saga="summit" label="Summit War Saga" />
+
+            <ArcCard
+                arcKey="sabaody"
+                name="Sabaody Archipelago"
+                description="The crew reaches the halfway point of the Grand Line — and meets the wall that separates dreamers from legends. A Celestial Dragon is punched. An admiral arrives. Kuma appears. One by one, the Straw Hats vanish. Luffy reaches out to his crew and catches only air."
+                imagePath="/assets/arcs/sabaody.png"
+                chapters="Ch. 490–513"
+                side="right"
+                quote="I couldn't save even one of them!"
+            />
+
+            <ArcCard
+                arcKey="marineford"
+                name="Marineford"
+                description="The greatest war the world has ever seen. Pirates versus the Navy. Whitebeard versus the Admirals. Luffy breaks into Impel Down, frees prisoners, and crashes the battlefield to save his brother Ace. The fire fist goes out. The old era ends in flame and grief."
+                imagePath="/assets/arcs/marineford.png"
+                chapters="Ch. 550–580"
+                side="left"
+                quote="Thank you for loving me!"
+            />
+        </div>
+
+        <!-- ═══ FISH-MAN ISLAND SAGA ═══ -->
+        <div id="saga-fishman" class="saga-section" data-saga="fishman">
+            <SagaDivider saga="fishman" label="Fish-Man Island Saga" />
+
+            <ArcCard
+                arcKey="fishman-island"
+                name="Fish-Man Island"
+                description="Two years of training. The crew reunites, stronger than ever, and dives 10,000 meters beneath the sea. In the kingdom of merfolk, Luffy stands before 100,000 enemies and knocks them down with sheer willpower. The New World awaits — and the Straw Hats are ready."
+                imagePath="/assets/arcs/fishman-island.png"
+                chapters="Ch. 603–653"
+                side="right"
+                crewJoins={[{ name: "Jinbe", icon: "🐋" }]}
+                quote="The one who will become the King of the Pirates is me!"
+            />
+            <Poneglyph id="fishman-stone" />
+        </div>
+
+        <!-- ═══ DRESSROSA SAGA ═══ -->
+        <div id="saga-dressrosa" class="saga-section" data-saga="dressrosa">
+            <SagaDivider saga="dressrosa" label="Dressrosa Saga" />
+
+            <ArcCard
+                arcKey="dressrosa"
+                name="Dressrosa"
+                description="A kingdom of passion and toys, ruled by a string-pulling tyrant hiding behind a smile. Doflamingo's birdcage closes in. Law's revenge unfolds. And in the colosseum, a fist coated in the power of a king shatters the threads that held a nation hostage. The Grand Fleet is born."
+                imagePath="/assets/arcs/dressrosa.png"
+                chapters="Ch. 700–801"
+                side="left"
+                quote="There is a reason why people have two ears and only one mouth."
+            />
+        </div>
+
+        <!-- ═══ WHOLE CAKE ISLAND SAGA ═══ -->
+        <div id="saga-wholecake" class="saga-section" data-saga="wholecake">
+            <SagaDivider saga="wholecake" label="Whole Cake Island Saga" />
+
+            <ArcCard
+                arcKey="whole-cake"
+                name="Whole Cake Island"
+                description="Sanji is dragged back to a family that threw him away, forced into a political marriage by the Emperor Big Mom. Luffy starves in the rain, waiting — because he can't become Pirate King without his cook. The wedding cake crumbles. The Straw Hats crash a tea party and escape a Yonko's territory alive."
+                imagePath="/assets/arcs/wholecake.png"
+                chapters="Ch. 825–902"
+                side="right"
+                quote="Without you, I can't become the King of the Pirates!"
+            />
+            <Poneglyph id="whole-cake-stone" />
+        </div>
+
+        <!-- ═══ WANO SAGA ═══ -->
+        <div id="saga-wano" class="saga-section" data-saga="wano">
+            <SagaDivider saga="wano" label="Wano Country Saga" />
+
+            <div class="arc-entry left" data-arc="wano">
+                <ArcCard
+                    arcKey="wano"
+                    name="Wano Country"
+                    description="The land of samurai, closed off from the world for 800 years. Oden's legacy, Kaido's iron rule, and the biggest battle in One Piece history unfold atop Onigashima. Luffy awakens the power of a god and liberates a nation with a punch that splits the sky. The dawn finally arrives."
+                    imagePath="/assets/arcs/wano.png"
+                    chapters="Ch. 909–1057"
+                    side="left"
+                    quote="I will bring the dawn to this country!"
+                />
+                <Poneglyph id="wano-stone" />
+                <LogEntry 
+                    author="Luffy" 
+                    text="This is it... the drums. I feel like I can do anything now!" 
+                    side="right" 
+                />
+            </div>
+        </div>
+
+        <!-- ═══ FINAL SAGA ═══ -->
+        <div id="saga-final" class="saga-section" data-saga="final">
+            <SagaDivider saga="final" label="The Final Saga" />
+
+            <ArcCard
+                arcKey="egghead"
+                name="Egghead"
+                description="The island of the future. Dr. Vegapunk's laboratory holds secrets that could shatter the world — the truth of the Void Century, the Ancient Weapons, and the will of D. The Five Elders descend. The world watches as Vegapunk's message begins to broadcast. The final voyage has begun."
+                imagePath="/assets/arcs/egghead.png"
+                chapters="Ch. 1058–1125"
+                side="right"
+                quote="The past is what makes the future."
+            />
+
+            <ArcCard
+                arcKey="elbaf"
+                name="Elbaf"
+                description="The land of warriors. The Straw Hats finally set foot on the legendary island of giants, reuniting with Dorry and Brogy. Amidst towering trees and mysterious Sun Gods, Prince Loki waits in chains. The secrets of the world and Shanks' shadow loom over the land of Elbaf."
+                imagePath="/assets/arcs/elbaf.png"
+                chapters="Ch. 1126–"
+                side="left"
+                quote="The Land of Giants... Elbaf!"
+            />
+        </div>
+
+        <div class="to-be-continued-container">
+            <div class="to-be-continued">
+                <span class="tbc-text">TO BE CONTINUED</span>
+                <div class="tbc-arrow"></div>
+            </div>
+        </div>
+
+        <div id="laugh-tale-reveal" class="hidden">
+            <div class="laugh-tale-content">
+                <h2>JOY BOY'S MESSAGE</h2>
+                <p>"HE LAUGHED."</p>
+                <div class="gold-sparkle"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p class="footer-quote">
+            "Inherited will, the destiny of the age, and the dreams of the
+            people — as long as people continue to pursue the meaning of
+            freedom, these things will never cease to be."
+        </p>
+        <div class="footer-divider"></div>
+        <p>— Gol D. Roger</p>
+    </footer>
+</Layout>

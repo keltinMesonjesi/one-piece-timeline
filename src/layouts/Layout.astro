@@ -1,0 +1,68 @@
+---
+import "../styles/global.css";
+import SagaNav from "../components/SagaNav.astro";
+import BountyTracker from "../components/BountyTracker.astro";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="The complete journey of the Straw Hat Pirates through every arc of One Piece — from Romance Dawn to the Final Saga."
+        />
+        <title>The Straw Hat Journey | One Piece Timeline</title>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    </head>
+    <body>
+        <div id="loading-screen">
+            <div class="loader-content">
+                <img
+                    src="/assets/strawhat_jollyroger.png"
+                    alt="Loading..."
+                    class="loader-logo"
+                />
+                <div class="loader-track">
+                    <div class="loader-bar"></div>
+                </div>
+                <p class="loader-text">Setting Sail...</p>
+            </div>
+        </div>
+
+        <div class="ocean-bg"></div>
+        <canvas id="particles-canvas"></canvas>
+
+        <SagaNav />
+        <BountyTracker />
+
+        <div class="wave-container">
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+        </div>
+
+        <audio id="ambient-audio" loop src="/assets/ocean.wav"></audio>
+        <button
+            id="audio-toggle"
+            class="audio-btn"
+            aria-label="Toggle ambient sound"
+        >
+            <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor"
+                ><path d="M8 5v14l11-7z"></path></svg
+            >
+            <svg
+                class="icon-pause"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                style="display: none;"
+                ><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path></svg
+            >
+        </button>
+
+        <slot />
+
+        <script src="../scripts/app.js"></script>
+    </body>
+</html>

@@ -1,0 +1,132 @@
+---
+const sagas = [
+    { id: 'eastblue', icon: '👒', label: 'East Blue' },
+    { id: 'alabasta', icon: '⏳', label: 'Alabasta' },
+    { id: 'skypiea', icon: '🪽', label: 'Skypiea' },
+    { id: 'water7', icon: '⛵', label: 'Water 7' },
+    { id: 'thriller', icon: '🦇', label: 'Thriller Bark' },
+    { id: 'summit', icon: '👊', label: 'Summit War' },
+    { id: 'fishman', icon: '🫧', label: 'Fish-Man' },
+    { id: 'dressrosa', icon: '🌹', label: 'Dressrosa' },
+    { id: 'wholecake', icon: '🎂', label: 'Whole Cake' },
+    { id: 'wano', icon: '⚔️', label: 'Wano' },
+    { id: 'final', icon: '🤖', label: 'Final Saga' }
+];
+---
+<nav class="saga-nav" aria-label="Saga navigation">
+    <div class="nav-track">
+        {sagas.map(saga => (
+            <a 
+                href={`#saga-${saga.id}`} 
+                class="nav-item" 
+                data-saga-link={saga.id}
+                title={saga.label}
+            >
+                <span class="nav-icon">{saga.icon}</span>
+                <span class="nav-label">{saga.label}</span>
+                <div class="nav-dot"></div>
+            </a>
+        ))}
+    </div>
+</nav>
+
+<style>
+    .saga-nav {
+        position: fixed;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 100;
+        background: rgba(10, 14, 26, 0.4);
+        backdrop-filter: blur(12px);
+        padding: 1rem 0.5rem;
+        border-radius: 100px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.5s ease;
+    }
+
+    .saga-nav.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-track {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+    }
+
+    .nav-item {
+        position: relative;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-icon {
+        font-size: 1.2rem;
+        filter: grayscale(1) opacity(0.5);
+        transition: all 0.3s ease;
+        z-index: 2;
+    }
+
+    .nav-label {
+        position: absolute;
+        right: 50px;
+        background: var(--gold-glow);
+        color: #000;
+        padding: 4px 12px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 600;
+        white-space: nowrap;
+        opacity: 0;
+        transform: translateX(10px);
+        transition: all 0.3s ease;
+        pointer-events: none;
+    }
+
+    .nav-item:hover .nav-label {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .nav-dot {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        bottom: -12px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-item:last-child .nav-dot {
+        display: none;
+    }
+
+    .nav-item.active .nav-icon {
+        filter: grayscale(0) opacity(1);
+        transform: scale(1.3);
+        text-shadow: 0 0 15px var(--gold-glow);
+    }
+
+    .nav-item:hover .nav-icon {
+        filter: grayscale(0) opacity(1);
+        transform: scale(1.2);
+    }
+
+    @media (max-width: 1024px) {
+        .saga-nav {
+            display: none;
+        }
+    }
+</style>

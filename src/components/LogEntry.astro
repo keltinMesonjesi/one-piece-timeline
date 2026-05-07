@@ -1,0 +1,68 @@
+---
+interface Props {
+    author: string;
+    text: string;
+    side: 'left' | 'right';
+}
+const { author, text, side } = Astro.props;
+---
+<div class={`log-entry ${side}`}>
+    <div class="log-content">
+        <div class="log-header">
+            <span class="log-quill">✒️</span>
+            <span class="log-author">{author}'s Log</span>
+        </div>
+        <p class="log-text">"{text}"</p>
+    </div>
+</div>
+
+<style>
+    .log-entry {
+        position: absolute;
+        width: 280px;
+        z-index: 5;
+        pointer-events: none;
+    }
+
+    .log-entry.left { left: calc(50% - 600px); }
+    .log-entry.right { left: calc(50% + 320px); }
+
+    .log-content {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        transform: rotate(-1deg);
+        transition: all 0.5s ease;
+    }
+
+    .log-entry.right .log-content { transform: rotate(1deg); }
+
+    .log-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 0.75rem;
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 0.65rem;
+        color: var(--gold-glow);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .log-text {
+        font-family: 'Inter', sans-serif;
+        font-style: italic;
+        font-size: 0.85rem;
+        line-height: 1.6;
+        color: var(--text-secondary);
+        opacity: 0.8;
+    }
+
+    @media (max-width: 1300px) {
+        .log-entry { display: none; }
+    }
+</style>
